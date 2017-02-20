@@ -1,6 +1,6 @@
-(function(){
+(function () {
 
-	var cityItemDirective = function() {
+	var cityItemDirective = function () {
 		return {
 			restrict: "AE",
 			templateUrl: "../../views/cityItemDirective.html",

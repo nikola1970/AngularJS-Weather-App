@@ -1,36 +1,36 @@
-(function(){
+(function () {
 
-    var listController = function($scope, cityFactory){
+    var listController = function ($scope, cityFactory) {
 
         $scope.localListCityInfo = [];
         $scope.cityInfos = [];
         $scope.localList = undefined;
 
-        $scope.init = function(){
+        $scope.init = function () {
             $scope.localList = cityFactory.getLocalList() || [];
             $scope.cityInfos = [];
-            $scope.localList.forEach(function(city){
-                cityFactory.getCity(city).then(function(response){
+            $scope.localList.forEach(function (city) {
+                cityFactory.getCity(city).then(function (response) {
                     if (city.toLowerCase() === response.data.name.toLowerCase()) {
                         $scope.cityInfos.push(response);
-                    } 
-				});
+                    }
+                });
             });
 
         }
 
         $scope.init();
- 
-        $scope.removeCity = function(remove) {
+
+        $scope.removeCity = function (remove) {
             console.log(remove)
-            var filteredArray = $scope.localList.filter(function(city){
+            var filteredArray = $scope.localList.filter(function (city) {
                 return city.toLowerCase() !== remove.toLowerCase();
             });
-             cityFactory.setLocalList(filteredArray);
-			 $scope.init();  
-		};
+            cityFactory.setLocalList(filteredArray);
+            $scope.init();
+        };
 
-        $scope.addCityToList = function(){
+        $scope.addCityToList = function () {
             $scope.localList.push($scope.anotherCity);
             cityFactory.setLocalList($scope.localList);
             $scope.anotherCity = "";
