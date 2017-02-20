@@ -2,7 +2,7 @@
 
 	var cityFactory = function($http) {
 
-		var API_URL = "http://api.openweathermap.org/data/2.5/weather?appid=397843cb2d3cbe8f748d85fd572da092&units=metric&q=";
+		var API_URL = "https://api.openweathermap.org/data/2.5/weather?appid=397843cb2d3cbe8f748d85fd572da092&units=metric&q=";
 
 		
 

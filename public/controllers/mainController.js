@@ -13,12 +13,19 @@
 			$scope.formVisible = !$scope.listVisible;
 			if ($scope.choosenCity) {
 				cityFactory.getCity($scope.choosenCity).then(function (response) {
-					$scope.cityInfo = response;
+					if (response.data.name.toLowerCase() == $scope.choosenCity) {
+						$scope.cityInfo = response;
+					}
 				});
 			}
 		};
 
 		$scope.init();
+
+		 $scope.removeCity = function() {
+           
+            $scope.init();
+        };
 
 
 		$scope.addCity = function () {
