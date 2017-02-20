@@ -23,6 +23,9 @@
 			},
 			setChoosenCity: function(city){
 				localStorage.setItem("choosenCity", city.toString());
+			}, 
+			removeChoosenCity: function() {
+				localStorage.removeItem("choosenCity");
 			}
 		}
 

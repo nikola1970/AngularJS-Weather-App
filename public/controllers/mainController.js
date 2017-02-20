@@ -13,7 +13,7 @@
 			$scope.formVisible = !$scope.listVisible;
 			if ($scope.choosenCity) {
 				cityFactory.getCity($scope.choosenCity).then(function (response) {
-					if (response.data.name.toLowerCase() == $scope.choosenCity) {
+					if (response.data.name.toLowerCase() == $scope.choosenCity.toLowerCase()) {
 						$scope.cityInfo = response;
 					}
 				});
@@ -23,7 +23,7 @@
 		$scope.init();
 
 		 $scope.removeCity = function() {
-           
+            cityFactory.removeChoosenCity();
             $scope.init();
         };
 

@@ -22,8 +22,11 @@
         $scope.init();
 
         $scope.removeCity = function (remove) {
-            localStorage.removeItem("choosenCity");
-             $scope.init();
+            var filteredArray = $scope.localList.filter(function (city) {
+                return city.toLowerCase() !== remove.toLowerCase();
+            });
+            cityFactory.setLocalList(filteredArray);
+            $scope.init();
         };
 
         $scope.addCityToList = function () {
