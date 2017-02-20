@@ -1,0 +1,11 @@
+<form ng-submit="addCityToList()">
+	<p>Add another city:</p>
+	<input type="text" class="form-control" ng-model="anotherCity">
+	<button type="submit" class="btn btn-primary">Add!</button>
+</form>
+
+<div class="list">
+	<div class="row">
+		<city-item-directive ng-repeat="cityInfo in cityInfos | orderBy: 'data.name'"></city-item-directive>
+	</div>
+</div>

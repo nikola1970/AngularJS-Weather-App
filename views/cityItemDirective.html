@@ -1,0 +1,23 @@
+<div class="col-md-6">
+	<div class="cityItem">
+		<h3>{{cityInfo.data.name}} <span class="glyphicon glyphicon-trash" ng-click="removeCity(cityInfo.data.name)" ></span></h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Temparature</th>
+					<th>Humidity</th> 
+					<th>Wind</th>
+					<th>Condition</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{cityInfo.data.main.temp}} C</td>
+					<td>{{cityInfo.data.main.humidity}} %</td>
+					<td>{{cityInfo.data.wind.speed}} m/s</td>
+					<td>{{cityInfo.data.weather[0].description}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

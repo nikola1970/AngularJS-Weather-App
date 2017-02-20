@@ -1,0 +1,8 @@
+<form ng-submit="addCity()" ng-show="formVisible">
+	<p>Add your city:</p>
+	<input type="text" class="form-control" ng-model="desiredCity">
+	<button type="submit" class="btn btn-primary">Add!</button>
+</form>
+<div class="row">
+	<city-item-directive ng-show="listVisible"></city-item-directive>
+</div>
